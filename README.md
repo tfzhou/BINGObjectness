@@ -72,3 +72,7 @@ codes.
 * [http://mmcheng.net/bing/](http://mmcheng.net/bing/) -- The original
   code / FAQ / Paper by Ming-Ming Cheng.
 * [https://github.com/bittnt/Objectness](https://github.com/bittnt/Objectness) -- The Linux version library by Shuai Zheng.
+
+## License
+
+BSD license.
