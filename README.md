@@ -1,7 +1,7 @@
 # BING Objectness
 
 BING Objectness proposal estimator Matlab (mex-c) wrapper, runs at 250
-FPS at a i7 CPU (2.93Hz) with Linux 12.04 64-bit and Matlab R2013a.
+FPS at a i7 CPU (2.93Hz) with Ubuntu 12.04 64-bit and Matlab R2013a.
 
 ## Introduction
 
