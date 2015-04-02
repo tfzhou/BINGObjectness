@@ -46,14 +46,14 @@ I have written three mex-c fuctions:
 Also, I have written three matlab scripts to show how to use it in
 Matlab (Name Convention: Example\_ + function name ).
 
-Note that the function _trainBING_ is a bit needless because 
-_BINGMultiple_ and _BINGSINGLE_ will learn the models if they do not
+Note that the function __trainBING__ is a bit needless because 
+__BINGMultiple__ and __BINGSingle__ will learn the models if they do not
 exists. 
 
 You can run Example\_BINGMultiple.m to reproduce the results in the
-origin paper, and a script called _PerImgAll.m_ will be generated in
+origin paper, and a script called __PerImgAll.m__ will be generated in
 your VOC2007 folder. 
-You can use the script and _PlotsCVPR14.m_ to plot the Figure 3 in the
+You can use the script and __PlotsCVPR14.m__ to plot the Figure 3 in the
 paper.
 
 I have tested the code in Ubuntu 12.04 64-bit (8G Memory) and Matlab R2013a,
