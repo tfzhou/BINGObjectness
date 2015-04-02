@@ -21,7 +21,10 @@ using namespace std;
  */
 #define IMAGE_IN      prhs[0]
 #define VOC_IN        prhs[1]
-#define MODELNAME_IN  prhs[2]
+#define BASE_IN       prhs[2]
+#define W_IN          prhs[3]
+#define NSS_IN        prhs[4]
+#define NUM_PER_SZ_IN prhs[5]
 
 /** Output Arguments
  */
@@ -29,30 +32,50 @@ using namespace std;
 
 /** Default Parameters
  */
-#define NUM_PER_SZ 10
-
 #define uint unsigned int
+
+#define _BASE 2
+#define _W    8
+#define _NSS  2
+#define _NUM_PER_SZ 130
 
 void mexFunction( int nlhs, mxArray* plhs[], int nrhs, const mxArray* prhs[] )
 {
-  char*   voc       = NULL;
-  char*   modelName = NULL;
+  char*   voc = NULL;
+  double base = _BASE;
+  int    W    = _W;
+  int    NSS  = _NSS;
+  int    numPerSz = _NUM_PER_SZ;
   
-  int     modelLoaded = 0;
+  if( nrhs < 2 ) mexErrMsgTxt("... [ At least 2 inputs required ( image, vocPath )");
+  if( nrhs > 6 ) mexErrMsgTxt("--- [ No more than 6 inputs required ( image, voc2007, base, W, NSS, numPerSz )");
   
-  if( nrhs < 3 ) mexErrMsgTxt("... [ At least 3 inputs required ( image, ws1, ws2 )");
-  
-  voc       = mxArrayToString(VOC_IN);
-  modelName = mxArrayToString(MODELNAME_IN);
+  voc = mxArrayToString(VOC_IN);
+  if( nrhs >= 2 )
+  {
+    base      = (double) mxGetScalar( BASE_IN );
+  }
+  if( nrhs >= 3 )
+  {
+    W         = (int)    mxGetScalar( W_IN );
+  }
+  if( nrhs >= 4 )
+  {
+    NSS       = (int)    mxGetScalar( NSS_IN );
+  }
+  if( nrhs == 5 )
+  {
+    numPerSz  = (int)    mxGetScalar( NUM_PER_SZ_IN );
+  }
   
   const string str(voc);
   DataSetVOC voc2007( str );
   voc2007.loadAnnotations();
-  Objectness objectness( voc2007 );
+  Objectness objectness( voc2007, base, W, NSS );
   
   vector<Vec4i> boxes;
   cv::Mat image = MxArray(IMAGE_IN).toMat();
-  objectness.getObjBndBoxesForTest( image, boxes, NUM_PER_SZ );
+  objectness.getObjBndBoxesForTest( image, boxes, numPerSz );
   
   /** Return value
    */
@@ -74,6 +97,4 @@ void mexFunction( int nlhs, mxArray* plhs[], int nrhs, const mxArray* prhs[] )
   /** Clean memory
    */
   mxFree( voc );
-  mxFree( modelName );
-  
 }

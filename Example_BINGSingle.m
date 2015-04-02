@@ -5,12 +5,9 @@ clc; clear;
 imPath = '/home/fei/Research/datasets/VOC/VOC2007/JPEGImages/000001.jpg';
 vocPath = '/home/fei/Research/datasets/VOC/VOC2007/';
 
-%% Train your model first
-modelName = [vocPath '/Results/ObjNessB2W8MAXBGR'];
-
 im = imread( imPath );
 
-BBs = BINGSingle( im, vocPath, modelName );
+BBs = BINGSingle( im, vocPath, 2, 8, 2, 130 );
 BBs(~any(BBs, 2), :) = [];
 
 

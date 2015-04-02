@@ -22,7 +22,8 @@ using namespace std;
 #define VOC_IN        prhs[0]
 #define BASE_IN       prhs[1]
 #define W_IN          prhs[2]
-#define NUM_PER_SZ_IN prhs[3]
+#define NSS_IN        prhs[3]
+#define NUM_PER_SZ_IN prhs[4]
 
 /** Output Arguments
  */
@@ -30,20 +31,43 @@ using namespace std;
 
 /** Default Parameters
  */
-#define NUM_PER_SZ 130
+#define _BASE 2
+#define _W    8
+#define _NSS  2
+#define _NUM_PER_SZ 130
 
 extern "C" mxArray* mxCreateReference(mxArray*);
 
 void mexFunction( int nlhs, mxArray* plhs[], int nrhs, const mxArray* prhs[] )
 {
   char*   voc       = NULL;
-  char*   modelName = NULL;
   
-  int     modelLoaded = 0;
+  double base = _BASE;
+  int    W    = _W;
+  int    NSS  = _NSS;
+  int    numPerSz = _NUM_PER_SZ;
   
-  if( nrhs < 1 ) mexErrMsgTxt("... [ At least 3 inputs required ( voc2007 )");
+  if( nrhs < 1 ) mexErrMsgTxt("... [ At least 1 inputs required ( voc2007 )");
+  if( nrhs > 5 ) mexErrMsgTxt("--- [ No more than 5 inputs required ( voc2007, base, W, NSS, numPerSz )");
   
   voc = mxArrayToString(VOC_IN);
+  
+  if( nrhs >= 2 )
+  {
+    base      = (double) mxGetScalar( BASE_IN );
+  }
+  if( nrhs >= 3 )
+  {
+    W         = (int)    mxGetScalar( W_IN );
+  }
+  if( nrhs >= 4 )
+  {
+    NSS       = (int)    mxGetScalar( NSS_IN );
+  }
+  if( nrhs == 5 )
+  {
+    numPerSz  = (int)    mxGetScalar( NUM_PER_SZ_IN );
+  }
   
   const string str(voc);
   DataSetVOC voc2007( str );
@@ -52,7 +76,7 @@ void mexFunction( int nlhs, mxArray* plhs[], int nrhs, const mxArray* prhs[] )
   Objectness objectness( voc2007 );
   
   vector<vector<Vec4i>> _boxesTests;
-  objectness.getObjBndBoxesForTestsFast( _boxesTests, NUM_PER_SZ );
+  objectness.getObjBndBoxesForTestsFast( _boxesTests, numPerSz );
   
   int nTest = _boxesTests.size();
   BB_OUT = mxCreateCellMatrix(nTest, 1);
@@ -82,6 +106,4 @@ void mexFunction( int nlhs, mxArray* plhs[], int nrhs, const mxArray* prhs[] )
   /** Clean memory
    */
   mxFree( voc );
-  mxFree( modelName );
-  
 }

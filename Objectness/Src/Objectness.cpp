@@ -780,9 +780,9 @@ void Objectness::getObjBndBoxesForTestsFast(vector<vector<Vec4i>> &_boxesTests, 
 
 void Objectness::getObjBndBoxesForTest( cv::Mat im, vector<Vec4i> &_boxes, int numDetPerSize )
 {
-	//trainObjectness(numDetPerSize);
+  trainObjectness(numDetPerSize);
   loadTrainedModel();
-	//illustrate();
+  illustrate();
 
   ValStructVec<float, Vec4i> boxesTests;
   boxesTests.reserve(10000);
