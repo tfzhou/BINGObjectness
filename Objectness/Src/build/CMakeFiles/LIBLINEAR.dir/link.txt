@@ -1,0 +1,2 @@
+/usr/bin/ar cr libLIBLINEAR.a  CMakeFiles/LIBLINEAR.dir/LibLinear/linear.cpp.o CMakeFiles/LIBLINEAR.dir/LibLinear/train.cpp.o CMakeFiles/LIBLINEAR.dir/LibLinear/tron.cpp.o
+/usr/bin/ranlib libLIBLINEAR.a

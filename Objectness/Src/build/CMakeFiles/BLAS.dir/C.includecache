@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/fei/Research/experiments/a1_Tracking/a10_objectness/Objectness/Src/LibLinear/blas/blas.h
+blasp.h
+/home/fei/Research/experiments/a1_Tracking/a10_objectness/Objectness/Src/LibLinear/blas/blasp.h
+
+/home/fei/Research/experiments/a1_Tracking/a10_objectness/Objectness/Src/LibLinear/blas/blasp.h
+
+/home/fei/Research/experiments/a1_Tracking/a10_objectness/Objectness/Src/LibLinear/blas/daxpy.c
+blas.h
+/home/fei/Research/experiments/a1_Tracking/a10_objectness/Objectness/Src/LibLinear/blas/blas.h
+
+/home/fei/Research/experiments/a1_Tracking/a10_objectness/Objectness/Src/LibLinear/blas/ddot.c
+blas.h
+/home/fei/Research/experiments/a1_Tracking/a10_objectness/Objectness/Src/LibLinear/blas/blas.h
+
+/home/fei/Research/experiments/a1_Tracking/a10_objectness/Objectness/Src/LibLinear/blas/dnrm2.c
+math.h
+-
+blas.h
+/home/fei/Research/experiments/a1_Tracking/a10_objectness/Objectness/Src/LibLinear/blas/blas.h
+
+/home/fei/Research/experiments/a1_Tracking/a10_objectness/Objectness/Src/LibLinear/blas/dscal.c
+blas.h
+/home/fei/Research/experiments/a1_Tracking/a10_objectness/Objectness/Src/LibLinear/blas/blas.h
+

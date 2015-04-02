@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/fei/Research/experiments/a1_Tracking/a10_objectness/Objectness/Src/LibLinear/linear.h
+
+/home/fei/Research/experiments/a1_Tracking/a10_objectness/Objectness/Src/LibLinear/train.cpp
+stdio.h
+-
+math.h
+-
+stdlib.h
+-
+string.h
+-
+ctype.h
+-
+errno.h
+-
+linear.h
+/home/fei/Research/experiments/a1_Tracking/a10_objectness/Objectness/Src/LibLinear/linear.h
+
