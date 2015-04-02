@@ -21,8 +21,8 @@ S. Torr},
 The original author Ming-Ming Cheng has already released the source code
 for windows 64-bit platform, and Shuai Zheng has provided the code for
 the linux/mac/windows users.
-In this library, I intend to provide some simple functions so that some
-users can easily reproduce the results in the paper or use BING for some
+In this library, I intend to provide some simple functions so that
+users in Matlab can easily reproduce the results in the paper or use BING for some
 other applications.
 
 ## Requirements
@@ -33,7 +33,7 @@ images/annotations PASCAL VOC 2007 data from the link:
 
 Please refer to the FAQs #2 in
 [http://mmcheng.net/bing/](http://mmcheng.net/bing/) for more details
-about how to prepare VOC2007 dataset.
+about how to prepare for the VOC2007 dataset.
 
 ## HowTo in Matlab
 
@@ -43,17 +43,17 @@ I have written three mex-c fuctions:
 * BINGMultiple.cpp - For reproducing the results of the original paper
 * BINGSingle.cpp - For users to use BING on a single image
 
-Also, I have written three matlab scripts to show how to use it in
+Also, I have written three matlab scripts to show how to use them in
 Matlab (Name Convention: Example\_ + function name ).
 
 Note that the function __trainBING__ is a bit needless because 
-__BINGMultiple__ and __BINGSingle__ will learn the models if they do not
+__BINGMultiple__ and __BINGSingle__ themselves will learn the models if they do not
 exists. 
 
 You can run Example\_BINGMultiple.m to reproduce the results in the
 origin paper, and a script called __PerImgAll.m__ will be generated in
 your VOC2007 folder. 
-You can use the script and __PlotsCVPR14.m__ to plot the Figure 3 in the
+You can use the script as well as __PlotsCVPR14.m__ to plot the Figure 3 in the
 paper.
 
 I have tested the code in Ubuntu 12.04 64-bit (8G Memory) and Matlab R2013a,
