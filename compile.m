@@ -15,15 +15,15 @@ if isunix
   linearPath = [objPath 'LibLinear/'];
   blasPath   = [linearPath 'blas/'];
   
-  % Objectness
-  eval( ['mex -O -c ' objPath 'DataSetVOC.cpp ' objPath 'CmFile.cpp ' ...
+  % Objectness 
+  eval( ['mex CXXFLAGS="\$CXXFLAGS -std=c++0x" -O -c ' objPath 'DataSetVOC.cpp ' objPath 'CmFile.cpp ' ...
                       objPath 'CmShow.cpp ' objPath 'FilterTIG.cpp ' objPath 'Objectness.cpp '] );
                    
   % LibLinear
-  eval( ['mex -O -c ' linearPath 'linear.cpp ' linearPath 'tron.cpp'  ] )
+  eval( ['mex CXXFLAGS="\$CXXFLAGS -std=c++0x" -O -c ' linearPath 'linear.cpp ' linearPath 'tron.cpp'  ] )
   
   % BLAS
-  eval( ['mex -O -c ' blasPath 'daxpy.c ' blasPath 'ddot.c ' blasPath 'dnrm2.c ' blasPath 'dscal.c'])
+  eval( ['mex CXXFLAGS="\$CXXFLAGS -std=c++0x" -O -c ' blasPath 'daxpy.c ' blasPath 'ddot.c ' blasPath 'dnrm2.c ' blasPath 'dscal.c'])
   
   % MxArray
   mex -O -c MxArray.cpp;
