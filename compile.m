@@ -16,7 +16,7 @@ if isunix
   blasPath   = [linearPath 'blas/'];
   
   % Objectness 
-  eval( ['mex CXXFLAGS="\$CXXFLAGS -std=c++0x" -O -c ' objPath 'DataSetVOC.cpp ' objPath 'CmFile.cpp ' ...
+  eval( ['mex -v CXXFLAGS="\$CXXFLAGS -std=c++0x" -O -c ' objPath 'DataSetVOC.cpp ' objPath 'CmFile.cpp ' ...
                       objPath 'CmShow.cpp ' objPath 'FilterTIG.cpp ' objPath 'Objectness.cpp '] );
                    
   % LibLinear

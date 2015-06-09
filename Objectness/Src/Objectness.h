@@ -19,15 +19,15 @@ public:
 
 	// Training and testing on the dataset
 	void trainObjectness(int numDetPerSize = 100);
-	void getObjBndBoxesForTests(vector<vector<Vec4i>> &boxesTests, int numDetPerSize = 100);
-	void getObjBndBoxesForTestsFast(vector<vector<Vec4i>> &boxesTests, int numDetPerSize = 100);
+	void getObjBndBoxesForTests(vector<vector<Vec4i> > &boxesTests, int numDetPerSize = 100);
+	void getObjBndBoxesForTestsFast(vector<vector<Vec4i> > &boxesTests, int numDetPerSize = 100);
   void getObjBndBoxesForTest( cv::Mat im, vector<Vec4i> &boxesTest, int numDetPerSize = 100 );
-	void getRandomBoxes(vector<vector<Vec4i>> &boxesTests, int numD = 10000);
+	void getRandomBoxes(vector<vector<Vec4i> > &boxesTests, int numD = 10000);
 	void evaluatePAMI12(CStr &saveName = "PlotMAMI12.m");
 	void evaluateIJCV13(CStr &saveName = "IJCV13.m");
-	void evaluatePerClassRecall(vector<vector<Vec4i>> &boxesTests, CStr &saveName = "Plot.m", const int numDet = 1000);
-	void evaluatePerImgRecall(const vector<vector<Vec4i>> &boxesTests, CStr &saveName, const int numDet = 1000);
-	void illuTestReults(const vector<vector<Vec4i>> &boxesTests);
+	void evaluatePerClassRecall(vector<vector<Vec4i> > &boxesTests, CStr &saveName = "Plot.m", const int numDet = 1000);
+	void evaluatePerImgRecall(const vector<vector<Vec4i> > &boxesTests, CStr &saveName, const int numDet = 1000);
+	void illuTestReults(const vector<vector<Vec4i> > &boxesTests);
 	void setColorSpace(int clr = MAXBGR);
 	
 	// Training SVM with feature vector X and label Y. 

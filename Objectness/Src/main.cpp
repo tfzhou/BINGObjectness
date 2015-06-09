@@ -43,6 +43,6 @@ void RunObjectness(CStr &resName, double base, int W, int NSS, int numPerSz)
     //vector<Vec4i> _boxes;
     //objNess.getObjBndBoxesForTest(im, _boxes, numPerSz );
 
-    vector<vector<Vec4i>> boxesTests;
+    vector<vector<Vec4i> > boxesTests;
     objNess.getObjBndBoxesForTestsFast(boxesTests, numPerSz);
 }

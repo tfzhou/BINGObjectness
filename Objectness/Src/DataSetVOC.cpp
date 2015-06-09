@@ -72,7 +72,7 @@ void DataSetVOC::loadDataGenericOverCls()
   int imgN = (int)allSet.size();
   trainSet.clear(), testSet.clear();
   trainSet.reserve(imgN), testSet.reserve(imgN);
-  vector<vector<Vec4i>> gtBoxes(imgN);
+  vector<vector<Vec4i> > gtBoxes(imgN);
   vector<vecI> gtClsIdx(imgN);
   for (int i = 0; i < imgN; i++){
     if (!loadBBoxes(allSet[i], gtBoxes[i], gtClsIdx[i]))

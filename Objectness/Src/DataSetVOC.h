@@ -14,7 +14,7 @@ struct DataSetVOC
 	int trainNum, testNum;
 	vecS trainSet, testSet; // File names (NE) for training and testing images
 	vecS classNames; // Object class names
-	vector<vector<Vec4i>> gtTrainBoxes, gtTestBoxes; // Ground truth bounding boxes for training and testing images
+	vector<vector<Vec4i> > gtTrainBoxes, gtTestBoxes; // Ground truth bounding boxes for training and testing images
 	vector<vecI> gtTrainClsIdx, gtTestClsIdx; // Object class indexes  
 
 
