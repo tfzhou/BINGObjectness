@@ -2,8 +2,8 @@
 
 clc; clear;
 
-imPath = '/home/fei/Research/datasets/VOC/VOC2007/JPEGImages/000001.jpg';
-vocPath = '/home/fei/Research/datasets/VOC/VOC2007/';
+imPath = '000001.jpg';
+vocPath = '/home/tfzhou/Research/data/VOC/VOC2007/';
 
 im = imread( imPath );
 

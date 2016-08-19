@@ -2,6 +2,6 @@
 
 clc; clear;
 
-vocPath = '/home/fei/Research/datasets/VOC/VOC2007/';
+vocPath = '/home/tfzhou/Research/data/VOC/VOC2007/';
 
 bboxes = BINGMultiple( vocPath, 2, 8, 2, 130 );

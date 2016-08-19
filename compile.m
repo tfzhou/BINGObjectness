@@ -34,9 +34,9 @@ if isunix
     objects = [ objects ' ' objectfiles(i).name ];
   end
   
-  eval(['mex BINGSingle.cpp' include lib objects ' CFLAGS="\$CFLAGS -fopenmp" LDFLAGS="\$LDFLAGS -fopenmp" ']);
-  eval(['mex trainBING.cpp' include lib objects ' CFLAGS="\$CFLAGS -fopenmp" LDFLAGS="\$LDFLAGS -fopenmp" ']);
-  eval(['mex BINGMultiple.cpp' include lib objects ' CFLAGS="\$CFLAGS -fopenmp" LDFLAGS="\$LDFLAGS -fopenmp" ']);
+  eval(['mex BINGSingle.cpp' include lib objects ' CXXFLAGS="\$CXXFLAGS -std=c++11 -fopenmp" LDFLAGS="\$LDFLAGS -fopenmp" ']);
+  eval(['mex trainBING.cpp' include lib objects ' CXXFLAGS="\$CXXFLAGS -std=c++11 -fopenmp" LDFLAGS="\$LDFLAGS -fopenmp" ']);
+  eval(['mex BINGMultiple.cpp' include lib objects ' CXXFLAGS="\$CXXFLAGS -std=c++11 -fopenmp" LDFLAGS="\$LDFLAGS -fopenmp" ']);
   
   delete *.o
 end
