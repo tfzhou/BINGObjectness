@@ -790,7 +790,7 @@ void Objectness::getObjBndBoxesForTest( cv::Mat im, vector<Vec4i> &_boxes, int n
   getObjBndBoxes(im, boxesTests, numDetPerSize);
 
   _boxes.resize(boxesTests.size());
-  for (int j = 0; j < boxesTests.size(); j++)
+  for (int j = 0; j < 4 * boxesTests.size(); j++)
     _boxes[0][j] = boxesTests[0][j];
 }
 
