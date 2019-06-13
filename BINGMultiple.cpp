@@ -36,7 +36,20 @@ using namespace std;
 #define _NSS  2
 #define _NUM_PER_SZ 130
 
-extern "C" mxArray* mxCreateReference(mxArray*);
+struct mxArray_Tag_Partial {
+    void *name_or_CrossLinkReverse;
+    mxClassID ClassID;
+    int VariableType;
+    mxArray *CrossLink;
+    size_t ndim;
+    unsigned int RefCount;
+};
+mxArray *mxCreateReference(const mxArray *mx)
+{
+    struct mxArray_Tag_Partial *my = (struct mxArray_Tag_Partial *) mx;
+    ++my->RefCount;
+    return (mxArray *) mx;
+}
 
 void mexFunction( int nlhs, mxArray* plhs[], int nrhs, const mxArray* prhs[] )
 {
